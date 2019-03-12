@@ -2,6 +2,7 @@
   "name": "fundfinder",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://thomashobohm.com/FundFinder",
   "dependencies": {
     "fuse.js": "^3.4.4",
     "react": "^16.8.4",
