@@ -3,8 +3,10 @@ import Fuse from 'fuse.js';
 
 import './App.css';
 
-import SearchBar from './SearchBar.js';
 import funds from './Data.js';
+
+import SearchBar from './SearchBar.js';
+import Fund from './Fund.js';
 
 const fuseOptions = {
   shouldSort: true,
@@ -33,13 +35,15 @@ export default class App extends Component {
     const searchResults = fundSearch.search(this.state.searchValue);
     const results = searchResults.map((result) => {
       return (
-        <h1 key={result.name}>{result.name}</h1>
+        <Fund key={result.name} name={result.name} />
       );
     });
     return (
       <div className="App">
         <SearchBar handleSearchChange={this.handleSearchChange} />
-        {results}
+        <div className="funds">
+          {results}
+        </div>
       </div>
     );
   }

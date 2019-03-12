@@ -4,6 +4,12 @@ const funds = [
   },
   {
     name: "Economics Research Alumni Fund"
+  },
+  {
+    name: "Natural Sciences Alumni Fund"
+  },
+  {
+    name: "Arts and Technology Development Fund"
   }
 ];
 

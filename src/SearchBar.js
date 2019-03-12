@@ -16,7 +16,7 @@ export default class SearchBar extends Component {
   render() {
     let placeholder = 'Search for a Fund...';
     return (
-      <input type="text" placeholder={placeholder} value={this.state.value} onChange={this.handleChange} />
+      <input className='searchBar' type="text" placeholder={placeholder} value={this.state.value} onChange={this.handleChange} />
     );
   }
 }
