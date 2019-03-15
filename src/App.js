@@ -16,7 +16,8 @@ const fuseOptions = {
   maxPatternLength: 32,
   minMachCharLength: 1,
   keys: [
-    'name'
+    'name',
+    'description'
   ]
 };
 
@@ -32,10 +33,10 @@ export default class App extends Component {
   }
   render() {
     let fundSearch = new Fuse(funds, fuseOptions);
-    const searchResults = fundSearch.search(this.state.searchValue);
+    const searchResults = this.state.searchValue ? fundSearch.search(this.state.searchValue) : funds;
     const results = searchResults.map((result) => {
       return (
-        <Fund key={result.name} name={result.name} />
+        <Fund key={result.name} data={result} />
       );
     });
     return (
