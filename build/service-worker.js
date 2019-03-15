@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/FundFinder/precache-manifest.4f9cefbeb78fbb84729e9a47bd44bbd3.js"
+  "/FundFinder/precache-manifest.a9efb18b297d772f1783e60a5a614efc.js"
 );
 
 workbox.clientsClaim();
