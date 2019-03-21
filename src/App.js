@@ -44,10 +44,27 @@ export default class App extends Component {
       return { searchTags };
     });
   }
+  search() {
+    // Create inverted index dictionary
+    let invertedIndexFunds = {};
+    funds.forEach((fund, index) => {
+        fund.tags.forEach(tag => {
+          if (tag in invertedIndexFunds) {
+            invertedIndexFunds[tag].add(index);
+          } else {
+            invertedIndexFunds[tag] = new Set([index]);
+          }
+        });
+    });
+    let filteredFunds = this.state.searchTags.size == 0 ? funds.slice() : Array.from(Array.from(this.state.searchTags).reduce((accumulator, tag) => {
+      return tag in invertedIndexFunds ? new Set([...accumulator, ...invertedIndexFunds[tag]]) : accumulator;
+    }, new Set([]))).map(fundIndex => funds[fundIndex]);
+    let fundSearch = new Fuse(filteredFunds, fuseOptions);
+    console.log(filteredFunds);
+    return this.state.searchValue ? fundSearch.search(this.state.searchValue) : filteredFunds;
+  }
   render() {
-    let fundSearch = new Fuse(funds, fuseOptions);
-    const searchResults = this.state.searchValue ? fundSearch.search(this.state.searchValue) : funds;
-    const results = searchResults.map((result) => {
+    const results = this.search().map((result) => {
       return (
         <Fund key={result.name} data={result} />
       );
