@@ -67,3 +67,37 @@ body, html {
   transform: scale(1.025);
   box-shadow: 0 0 14px rgba(0,0,0,.12);
 }
+
+.tags {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.tag {
+  margin-top: 20px;
+  margin-right: 2%;
+  width: 32%;
+  background: #fff;
+  text-align: center;
+
+  transition: all .2s ease-in-out;
+
+  cursor: pointer;
+}
+
+.tag:hover {
+  transform: scale(1.025);
+  box-shadow: 0 0 14px rgba(0,0,0,.12);
+}
+
+.tag.selected {
+  background: #008bba;
+  color: #fff  ;
+}
+
+.tag:nth-child(3n+3) {
+  margin-right: 0;
+}

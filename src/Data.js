@@ -1,4 +1,4 @@
-const funds = [
+export const funds = [
   {
     name: "Academic Advancement Program",
     description: "AAP, the largest university-based, student-diversity program in the nation, turns unlikely students into successful graduates and future leaders."
@@ -49,4 +49,17 @@ const funds = [
   }
 ];
 
-export default funds;
+export const tags = [
+  {
+    name: 'tag1',
+    title: 'Tag #1'
+  },
+  {
+    name: 'tag2',
+    title: 'Tag #2'
+  },
+  {
+    name: 'tag3',
+    title: 'Tag #3'
+  }
+];
